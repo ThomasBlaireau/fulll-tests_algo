@@ -1,0 +1,54 @@
+Hello,
+
+I didn't really know how to present the algo results, so I made a basic GUI to play with numbers.
+You just have to fill in the input and let yourself be guided by the buttons.
+
+The function allowing to increment an array of digits and the associated algo are in the incrementTools.js file and is called IncrementArray (digitsArray).
+(It is on line 17).
+
+To get straight to the point, here they are copied/pasted :
+
+//////////////////////////////////////
+// The requested increment function //
+//////////////////////////////////////
+function IncrementArray(digitsArray){
+    //Algo :
+    //► If the last digit isn't 9, this is a simple increment of it
+    //► Else, we have to check if the previous digit isn't 9
+    //►► While the tested digit is 9, we have to check the previous digit
+    //►►► If the tested digit isn't 9, increment it, set all the next digits to 0 and exit the loop
+    //►►► Else If the very first digit is 9 (in fact, if all digits are 9, like [9,9,9]), we have to set all digits to 0, unshift a 1 at the start of the array and exit the loop
+
+    var arrayLength = digitsArray.length;
+
+    //► If the last digit isn't 9, this is a simple increment of it
+    if(digitsArray[arrayLength - 1] != 9){
+        digitsArray[arrayLength - 1]++;
+
+    //► Else, we have to check if the previous digit isn't 9
+    }else{
+        //►► While the tested digit is 9, we have to check the previous digit
+        for(var i = 1; i <= arrayLength; i++){
+            //►►► If the tested digit isn't 9, increment it, set all the next digits to 0 and exit the loop
+            if(digitsArray[arrayLength - i] != 9){
+                digitsArray[arrayLength - i]++;
+                for(var y = 1; arrayLength - i + y < arrayLength ; y++){
+                    digitsArray[arrayLength - i + y] = 0;
+                }
+                break;
+
+            //►►► Else If all digits are 9, we have to set them to 0, unshift a 1 at the start of the array and exit the loop
+            }else{
+                if((i == arrayLength) && (digitsArray[0] == 9)){
+                    for(var y = 0; y < arrayLength ; y++){
+                        digitsArray[y] = 0;
+                    }
+                    digitsArray.unshift(1);
+                    break;
+                }
+            }
+        }
+    }
+
+    return digitsArray;
+}

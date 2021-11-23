@@ -1,0 +1,13 @@
+/* Please check "Lisez moi.txt" or "Read me.txt" */
+
+.yellow{
+    background-color: lightyellow;
+}
+
+body{
+    margin: 0;
+}
+
+div{
+    padding: 10px 0px 10px 10px;
+}
