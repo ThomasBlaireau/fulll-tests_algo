@@ -1,0 +1,38 @@
+Bonjour,
+
+J'ai commencé par réaliser l'exercice sur l'incrémentation d'un tableau de chiffres.
+J'ai donc réutilisé la même IHM basique pour ce FizzBuzz.
+
+La fonction demandée ainsi que l'algo associé se trouvent dans fizzbuzz.js
+La routine d'affichage se trouve dans displayer.js ligne 21 à 30.
+
+Pour aller droit au but, les voici copiés/collés :
+
+//////////////////////////////////////
+// The requested FizzBuzz function //
+////////////////////////////////////
+
+//Algo :
+    //► If the rest of the division of (3*5)/number = 0, then display "FizzBuzz"
+    //► Else if the rest of the division of (3)/number = 0, then display "Fizz"
+    //► Else if the rest of the division of (5)/number = 0, then display "Buzz"
+    //► Else display the number
+
+function FizzBuzz(number){
+    var result = '';
+    
+    if (number % 15 == 0){
+        result = "FizzBuzz";
+    }
+    else if (number % 3 == 0){
+        result = "Fizz";
+    }
+    else if (number % 5 == 0){
+        result = "Buzz";
+    }
+    else{
+        result = number;
+    } 
+
+    return result;
+}
