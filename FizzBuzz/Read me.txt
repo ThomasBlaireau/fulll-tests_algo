@@ -1,0 +1,36 @@
+I started by doing the exercise on incrementing an array of numbers.
+So I reused the same basic UI for this FizzBuzz.
+
+The requested function as well as the associated algo can be found in fizzbuzz.js
+The display routine can be found in displayer.js line 21 to 30. 
+
+To get straight to the point, here they are copied/pasted : 
+
+//////////////////////////////////////
+// The requested FizzBuzz function //
+////////////////////////////////////
+
+//Algo :
+    //► If the rest of the division of (3*5)/number = 0, then display "FizzBuzz"
+    //► Else if the rest of the division of (3)/number = 0, then display "Fizz"
+    //► Else if the rest of the division of (5)/number = 0, then display "Buzz"
+    //► Else display the number
+
+function FizzBuzz(number){
+    var result = '';
+    
+    if (number % 15 == 0){
+        result = "FizzBuzz";
+    }
+    else if (number % 3 == 0){
+        result = "Fizz";
+    }
+    else if (number % 5 == 0){
+        result = "Buzz";
+    }
+    else{
+        result = number;
+    } 
+
+    return result;
+}
